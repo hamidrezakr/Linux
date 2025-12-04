@@ -1,4 +1,4 @@
-
+Last Updated: $(date +%Y-%m-%d)
 ## 🛡️ Security & Protection Tools
 apt install -y fail2ban 
 apt install -y ufw            
