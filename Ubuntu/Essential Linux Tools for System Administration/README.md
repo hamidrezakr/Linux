@@ -264,7 +264,7 @@ bash
 ## Fetch latest version
 wget -O install-essential-tools.sh https://raw.githubusercontent.com/HamidrezaKR/linux-tools-installer/main/install-essential-tools.sh
 chmod +x install-essential-tools.sh
-Remove Tools
+## Remove Tools
 To remove specific tools:
 
 bash
@@ -282,7 +282,7 @@ Update AIDE database after installation: sudo aideinit
 
 Run Lynis audit: sudo lynis audit system
 
-Contributing
+## Contributing
 Feel free to:
 
 Fork the repository
@@ -293,29 +293,29 @@ Submit a pull request
 
 Report issues or suggest improvements
 
-License
-Copyright 2024 HamidrezaKR
+## License
+Apache License 2.0
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-text
-http://www.apache.org/licenses/LICENSE-2.0
+    http://www.apache.org/licenses/LICENSE-2.0
+
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-Author
+### Author
 HamidrezaKR
 
 GitHub: @HamidrezaKR
 
 Created: April 2024
 
-Support
+### Support
 If you find this script useful:
 
 ⭐ Star the repository
