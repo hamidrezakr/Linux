@@ -1,112 +1,328 @@
+# Essential Linux Tools Installer
+Overview
+A comprehensive Bash script for installing essential Linux tools across multiple categories: security, monitoring, networking, system management, and more. Designed for Debian-based distributions (Ubuntu, Debian, etc.).
 
-### **Essential Linux Tools for System Administration**
+Features
+🛡️ Security & Protection: Fail2ban, UFW, AIDE, Lynis, and more
 
-A comprehensive collection of essential Linux tools for system administration, monitoring, security, and networking.
+📊 Monitoring & Observability: Real-time system monitoring tools
 
-## **🛡️ Security & Protection Tools**
+🌐 Networking: Network analysis, diagnostics, and testing tools
 
-| **Tool** | **Description** |
-| --- | --- |
-| **fail2ban** | Automatically bans IP addresses that show malicious signs by scanning log files |
-| **ufw** | Simple and user-friendly firewall for managing iptables rules |
-| **iptables-persistent** | Automatically saves and restores iptables rules after reboot |
-| **rkhunter** | Rootkit scanner for detecting malware and backdoors |
-| **auditd** | Advanced auditing system for tracking and logging system activities |
-| **aide** | File system-based intrusion detection system using checksum verification |
-| **lynis** | Comprehensive security scanner for system assessment and hardening |
-| **nmap** | Network scanner for discovering devices and open ports |
-| **ssh-import-id** | Automatically imports SSH keys from services like GitHub |
+💾 File & Disk Management: Disk utilities and file management tools
 
-## **📊 Monitoring & Observability Tools**
+🔧 Development Tools: Essential development packages and utilities
 
-| **Tool** | **Description** |
-| --- | --- |
-| **atop** | Advanced system monitoring with performance history storage |
-| **htop** | Interactive and colorful process monitor |
-| **iotop** | Real-time disk I/O monitoring per process |
-| **sysstat** | Monitoring toolkit including sar, iostat, and mpstat |
-| **glances** | Comprehensive system monitoring with web and text interfaces |
-| **nmon** | System monitoring tool for terminal-based performance display |
-| **prometheus-node-exporter** | System metrics exporter for Prometheus |
-| **multitail** | Simultaneous display of multiple log files in one terminal |
+🖥️ System Management: Advanced system administration tools
 
-## **🌐 Networking & Communication Tools**
+📦 Package Management: Enhanced package management utilities
 
-| **Tool** | **Description** |
-| --- | --- |
-| **arping** | ARP packet tool for Layer 2 connectivity testing |
-| **dnsutils** | DNS tools including dig and nslookup for troubleshooting |
-| **ethtool** | Display and configure network interface parameters |
-| **iftop** | Real-time network bandwidth usage display |
-| **iptraf** | Network traffic monitor with advanced statistics |
-| **mtr** | Combines traceroute and ping capabilities for network analysis |
-| **tcpdump** | Network packet capture and analysis for debugging |
-| **traceroute** | Traces packet routes from source to destination |
-| **iperf3** | Network bandwidth and performance measurement tool |
-| **netcat-openbsd** | Versatile networking tool for reading/writing TCP/UDP connections |
-| **speedtest-cli** | Internet speed test execution from command line |
-| **bridge-utils** | Tools for creating and managing network bridges |
+⏱️ Time Synchronization: Accurate timekeeping with Chrony
 
-## **💾 File & Disk Management Tools**
+☁️ Virtualization: VMware/Open virtualization tools
 
-| **Tool** | **Description** |
-| --- | --- |
-| **gdisk** | GPT partition management tool for large disks |
-| **ncdu** | Disk space analyzer with interactive, navigable interface |
-| **xfsprogs** | XFS file system management tools |
-| **mlocate** | Fast file search system using the locate command |
-| **rsync** | High-efficiency file synchronization and copying tool |
-| **tree** | Directory structure tree display |
+Prerequisites
+Debian-based Linux distribution (Ubuntu, Debian, etc.)
 
-## **🔧 Development & System Tools**
+Root or sudo privileges
 
-| **Tool** | **Description** |
-| --- | --- |
-| **build-essential** | Compilation toolset including gcc, make, and libraries |
-| **curl** | Data transfer tool supporting multiple protocols |
-| **wget** | Internet file downloader with resume capability |
-| **vim** | Advanced text editor with extensive features |
-| **tmux** | Terminal multiplexer for persistent sessions |
-| **screen** | Older terminal multiplexer with detach capability |
-| **less** | Text file viewer with search and navigation capabilities |
+Active internet connection
 
-## **🖥️ System Management Tools**
+Installation & Usage
+1. Download the Script
+bash
+wget https://raw.githubusercontent.com/hamidrezakr/Linux/refs/heads/main/Ubuntu/Essential%20Linux%20Tools%20for%20System%20Administration/install-essential-tools.sh
+2. Make Executable
+bash
+chmod +x install-essential-tools.sh
+3. Run the Script
+bash
+## Run with sudo
+sudo ./install-essential-tools.sh
 
-| **Tool** | **Description** |
-| --- | --- |
-| **lsof** | Displays files opened by processes |
-| **lsb-release** | Displays Linux distribution version information |
-| **dlocate** | Fast search for files belonging to packages |
-| **net-tools** | Legacy networking tools including ifconfig, netstat, and route |
-| **iproute2** | Modern networking tools including ip, ss, and tc (replaces net-tools) |
-| **whois** | Domain and IP information lookup in whois databases |
-| **logwatch** | Log analyzer and summary reporter for system logs |
+## Or if you're already root
+./install-essential-tools.sh
+Installation Options
+Install All Categories (Default)
+bash
+sudo ./install-essential-tools.sh --all
+Install Specific Categories
+bash
+## Security tools only
+sudo ./install-essential-tools.sh --security
 
-## **📦 Package & Repository Management**
+## Monitoring tools only
+sudo ./install-essential-tools.sh --monitoring
 
-| **Tool** | **Description** |
-| --- | --- |
-| **apt-transport-https** | HTTPS protocol support for apt repositories |
-| **dirmngr** | GPG key management for repository authentication |
-| **apt-file** | Search package contents before installation |
-| **debian-goodies** | Collection of useful tools for Debian/Ubuntu |
+## Networking tools only
+sudo ./install-essential-tools.sh --networking
 
-## **⏱️ Time Synchronization**
+## Multiple categories
+sudo ./install-essential-tools.sh --security --networking --monitoring
+Other Options
+bash
+## Show help
+sudo ./install-essential-tools.sh --help
 
-| **Tool** | **Description** |
-| --- | --- |
-| **chrony** | High-accuracy time synchronization service (replaces ntp) |
+## Dry run (show what would be installed)
+sudo ./install-essential-tools.sh --dry-run
 
-## **☁️ Virtualization Tools**
+## Skip apt update
+sudo ./install-essential-tools.sh --no-update
+Categories & Tools
+🛡️ Security & Protection Tools
+fail2ban: Intrusion prevention software
 
-| **Tool** | **Description** |
-| --- | --- |
-| **open-vm-tools** | Guest tools for VMware virtualization |
+ufw: Uncomplicated Firewall
 
-## **👁️‍🗨️ Browsing & Access**
+iptables-persistent: Firewall rule persistence
 
-| **Tool** | **Description** |
-| --- | --- |
-| **links** | Text-based web browser for terminal access |
+rkhunter: Rootkit hunter
 
-### APP LIST:
+auditd: Linux audit daemon
+
+aide: Advanced Intrusion Detection Environment
+
+lynis: Security auditing tool
+
+nmap: Network discovery and security auditing
+
+ssh-import-id: Import SSH keys from Launchpad/GitHub
+
+📊 Monitoring & Observability Tools
+atop: Advanced system and process monitor
+
+htop: Interactive process viewer
+
+iotop: I/O monitoring tool
+
+sysstat: Performance monitoring tools (sar, iostat)
+
+glances: Cross-platform monitoring tool
+
+nmon: AIX & Linux performance monitor
+
+multitail: Monitor multiple log files
+
+logwatch: Log analyzer and reporter
+
+🌐 Networking & Communication Tools
+arping: Send ARP requests to a neighbor host
+
+dnsutils: DNS utilities (dig, nslookup)
+
+ethtool: Display or change Ethernet settings
+
+iftop: Display bandwidth usage
+
+iptraf: IP network monitoring tool
+
+mtr: Network diagnostic tool
+
+tcpdump: Command-line packet analyzer
+
+traceroute: Print network route packets take
+
+iperf3: Network bandwidth measurement
+
+netcat-openbsd: TCP/IP swiss army knife
+
+speedtest-cli: Internet bandwidth tester
+
+bridge-utils: Ethernet bridge configuration
+
+💾 File & Disk Management Tools
+gdisk: GPT partition table manipulator
+
+ncdu: Disk usage analyzer with ncurses interface
+
+xfsprogs: XFS filesystem utilities
+
+mlocate: Quickly find files on the filesystem
+
+rsync: Fast, versatile file copying tool
+
+tree: Display directory tree structure
+
+🔧 Development & System Tools
+build-essential: Essential packages for compiling software
+
+curl: Command-line tool for transferring data with URLs
+
+wget: Non-interactive network downloader
+
+vim: Advanced text editor
+
+tmux: Terminal multiplexer
+
+screen: Full-screen window manager
+
+less: Better file pager
+
+🖥️ System Management Tools
+lsof: List open files
+
+lsb-release: Linux Standard Base version reporting
+
+dlocate: Fast alternative to dpkg -L and dpkg -S
+
+net-tools: NET-3 networking toolkit (ifconfig, netstat)
+
+iproute2: Advanced IP routing and network configuration
+
+whois: Client for the whois directory service
+
+📦 Package & Repository Management
+apt-transport-https: APT transport for downloading via HTTPS
+
+dirmngr: GNU privacy guard - certificate management
+
+apt-file: APT package searching utility
+
+debian-goodies: Small toolbox-style utilities
+
+⏱️ Time Synchronization
+chrony: Versatile implementation of NTP
+
+☁️ Virtualization Tools
+open-vm-tools: Open VMware tools for guest operating systems
+
+👁️‍🗨️ Browsing & Access
+links: Text-mode WWW browser
+
+Customization
+Edit the Script
+You can modify the script to:
+
+Add additional tools
+
+Remove tools you don't need
+
+Change installation parameters
+
+Add custom repositories
+
+Create a Custom Configuration File
+bash
+## Create a custom tools list
+cat > my-tools.conf << EOF
+## My custom tool selection
+htop
+vim
+curl
+wget
+nmap
+EOF
+
+## Run with custom configuration
+sudo ./install-essential-tools.sh --config my-tools.conf
+Verification
+After installation, verify some key tools:
+
+bash
+## Check fail2ban status
+sudo systemctl status fail2ban
+
+## Test nmap
+nmap --version
+
+## Verify htop installation
+htop --version
+
+## Check UFW status
+sudo ufw status
+Troubleshooting
+Common Issues
+Package not found errors:
+
+bash
+sudo apt update
+sudo apt install --fix-missing
+Permission errors:
+Ensure you're running with sudo or as root
+
+Network issues:
+Check your internet connection and DNS settings
+
+Disk space issues:
+
+bash
+df -h
+sudo apt clean
+Logs
+Check installation logs:
+
+bash
+## View apt history
+cat /var/log/apt/history.log
+
+## Check system logs
+journalctl -xe
+Script Maintenance
+Update the Script
+bash
+## Fetch latest version
+wget -O install-essential-tools.sh https://raw.githubusercontent.com/HamidrezaKR/linux-tools-installer/main/install-essential-tools.sh
+chmod +x install-essential-tools.sh
+Remove Tools
+To remove specific tools:
+
+bash
+sudo apt remove --purge <package-name>
+Security Considerations
+⚠️ Important Security Notes:
+
+Review all security tools configurations after installation
+
+Configure UFW rules appropriately for your environment
+
+Set up fail2ban jail configurations
+
+Update AIDE database after installation: sudo aideinit
+
+Run Lynis audit: sudo lynis audit system
+
+Contributing
+Feel free to:
+
+Fork the repository
+
+Create a feature branch
+
+Submit a pull request
+
+Report issues or suggest improvements
+
+License
+Copyright 2024 HamidrezaKR
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+text
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Author
+HamidrezaKR
+
+GitHub: @HamidrezaKR
+
+Created: April 2024
+
+Support
+If you find this script useful:
+
+⭐ Star the repository
+
+🐛 Report issues
+
+🔄 Share with others
+
+💡 Suggest improvements
+
